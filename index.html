@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yemek Tarifleri</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/c20485228a.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <section id="menu">
+    <div id="logo">Yemekler</div>
+    <nav>
+      <button id="darkModeBtn">🌙 Gece Modu</button>
+      <button id="loginBtn">Giriş Yap</button>
+      <button id="logoutBtn" style="display: none;">Çıkış Yap</button>
+      <span id="usernameDisplay"></span>
+      <a href="#anasayfa">Anasayfa</a>
+      <a href="#ana-yemekler">Ana Yemekler</a>
+      <a href="#tatlilar">Tatlılar</a>
+      <a href="#kahvaltiliklar">Kahvaltılıklar</a>
+    </nav>
+  </section>
+
+  <input type="text" id="searchInput" placeholder="Tarif ara..." />
+
+  <section id="anasayfa">
+    <div id="içerik">
+      <h2>Anasayfa</h2>
+      <p>
+        Lezzetin dünyasına hoş geldiniz! En pratik ve nefis yemek tarifleriyle mutfağınızda harikalar yaratın.
+        <br />Bu site, Site Web tabanlı uygulama programlama dersi için final projesidir.
+      </p>
+    </div>
+  </section>
+
+  <section id="ana-yemekler">
+    <h3>Ana Yemekler</h3>
+
+    <div class="tarif" data-id="lazanya">
+      <a href="yemekler/lazanya.html">
+        <img src="img/r6.jpg" alt="Lazanya" />
+        <div class="tarif-detay">
+          <h4>Lazanya</h4>
+          <p>Kat kat lezzet: Kıymalı harç, beşamel sos ve nefis kaşar peyniriyle hazırlanan bu lazanya tarifiyle İtalyan mutfağını evinize taşıyın.</p>
+        </div>
+      </a>
+      <i class="fas fa-heart favorite-icon" data-id="lazanya"></i>
+    </div>
+
+    <div class="tarif" data-id="karnabahargraten">
+      <a href="yemekler/karnabahargraten.html">
+        <img src="img/r7.jpg" alt="Karnabahar Graten" />
+        <div class="tarif-detay">
+          <h4>Karnabahar Graten</h4>
+          <p>Fırında beşamel soslu sebze keyfi.</p>
+        </div>
+      </a>
+      <i class="fas fa-heart favorite-icon" data-id="karnabahargraten"></i>
+    </div>
+
+    <div class="tarif" data-id="tavuksote">
+      <a href="yemekler/Tavuksote.html">
+        <img src="img/tavuksote.jpg" alt="Tavuk Sote" />
+        <div class="tarif-detay">
+          <h4>Tavuk Sote</h4>
+          <p>Renkli biberler, mantar ve tavukla hızlıca hazırlanan nefis bir akşam yemeği.</p>
+        </div>
+      </a>
+      <i class="fas fa-heart favorite-icon" data-id="tavuksote"></i>
+    </div>
+  </section>
+
+  <section id="tatlilar">
+    <h3>Tatlılar</h3>
+
+    <div class="tarif" data-id="sütlac" >
+      <a href="yemekler/sütlac.html" >
+        <img src="img/firinsütlaç.jpg" alt="sütlac" />
+        <div class="tarif-detay">
+          <h4>Sütlaç</h4>
+          <p>Fırında nar gibi kızaran sütlaç, klasik Türk tatlılarından biridir. Hem hafif hem de oldukça lezzetlidir.</p>
+        </div>
+      </a>
+      <i class="fas fa-heart favorite-icon" data-id="sütlac"></i>
+    </div>
+
+    <div class="tarif" data-id="magnolia">
+      <a href="yemekler/magnolia.html">
+        <img src="img/r1.jpg.avif" alt="Magnolia" />
+        <div class="tarif-detay">
+          <h4>Magnolia</h4>
+          <p>Bisküvi, meyve ve krema üçlüsüyle hazırlanan, pratik ve göz alıcı bir tatlı alternatifi.</p>
+        </div>
+      </a>
+      <i class="fas fa-heart favorite-icon" data-id="magnolia"></i>
+    </div>
+  </section>
+
+  <section id="kahvaltiliklar">
+    <h3>Kahvaltılıklar</h3>
+
+    <div class="tarif" data-id="menemen">
+      <a href="yemekler/menemen.html">
+        <img src="img/rmelemn.webp" alt="Menemen" />
+        <div class="tarif-detay">
+          <h4>Menemen</h4>
+          <p>Yumurta, domates ve biberle yapılan geleneksel bir kahvaltılık. İsteğe göre soğan da eklenebilir.</p>
+        </div>
+      </a>
+      <i class="fas fa-heart favorite-icon" data-id="menemen"></i>
+    </div>
+
+    <div class="tarif" data-id="pancake">
+      <a href="yemekler/pancake.html">
+        <img src="img/r10.jpg" alt="Pancake" />
+        <div class="tarif-detay">
+          <h4>Pancake</h4>
+          <p>Üzerine bal, çikolata veya meyve ekleyerek servis edebileceğiniz yumuşacık pankekler sabahlarınıza neşe katacak.</p>
+        </div>
+      </a>
+      <i class="fas fa-heart favorite-icon" data-id="pancake"></i>
+    </div>
+  </section>
+  <aside id="favorilerPaneli">
+  <h3>Favori Tarifler</h3>
+  <ul id="favoriListe"></ul>
+</aside>
+
+
+  <button id="backToTop" title="Yukarı Çık">&#8679;</button>
+
+  <script>
+    // Kullanıcı Durumu
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const usernameDisplay = document.getElementById("usernameDisplay");
+
+    function checkLogin() {
+      const username = localStorage.getItem("username");
+      if (username) {
+        loginBtn.style.display = "none";
+        logoutBtn.style.display = "inline";
+        usernameDisplay.textContent = `Merhaba, ${username}`;
+      } else {
+        loginBtn.style.display = "inline";
+        logoutBtn.style.display = "none";
+        usernameDisplay.textContent = "";
+      }
+    }
+
+    loginBtn.addEventListener("click", () => {
+      const username = prompt("Adınızı girin:");
+      if (username) {
+        localStorage.setItem("username", username);
+        checkLogin();
+      }
+    });
+
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("username");
+      checkLogin();
+    });
+
+    checkLogin();
+
+    // Favorilere Ekleme
+    function favorileriGosterPanelde() {
+      const panel = document.getElementById("favoriListe");
+      panel.innerHTML = "";
+      const favoriler = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+      favoriler.forEach(id => {
+        const tarif = document.querySelector(`.tarif[data-id="${id}"]`);
+        if (tarif) {
+          const baslik = tarif.querySelector("h4").textContent;
+          const li = document.createElement("li");
+          li.textContent = baslik;
+
+          const silBtn = document.createElement("button");
+          silBtn.textContent = "×";
+          silBtn.addEventListener("click", () => {
+            let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+            favs = favs.filter(f => f !== id);
+            localStorage.setItem("favorites", JSON.stringify(favs));
+            document.querySelector(`.favorite-icon[data-id="${id}"]`)?.classList.remove("favori-aktif");
+            favorileriGosterPanelde();
+          });
+
+          li.appendChild(silBtn);
+          panel.appendChild(li);
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      checkLogin();
+      favorileriGosterPanelde();
+
+      document.querySelectorAll(".favorite-icon").forEach(icon => {
+        const id = icon.dataset.id;
+        const favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+        if (favs.includes(id)) icon.classList.add("favori-aktif");
+
+        icon.addEventListener("click", function () {
+          if (!localStorage.getItem("username")) {
+            alert("Favorilere eklemek için giriş yapmalısınız.");
+            return;
+          }
+
+          let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+          if (favs.includes(id)) {
+            favs = favs.filter(f => f !== id);
+            icon.classList.remove("favori-aktif");
+          } else {
+            favs.push(id);
+            icon.classList.add("favori-aktif");
+          }
+
+          localStorage.setItem("favorites", JSON.stringify(favs));
+          favorileriGosterPanelde();
+          // Sayfa yüklendiğinde favori ikonlarını aktif yap
+document.addEventListener("DOMContentLoaded", function () {
+  const favoriler = JSON.parse(localStorage.getItem("favoriler")) || [];
+  document.querySelectorAll(".favorite-icon").forEach(function (icon) {
+    const id = icon.getAttribute("data-id");
+    if (favoriler.includes(id)) {
+      icon.classList.add("active");
+    }
+  });
+});
+
+        });
+      });
+    });
+  
+
+    // Gece Modu
+    document.getElementById("darkModeBtn").addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+      this.textContent = document.body.classList.contains("dark-mode") ? "☀️ Gündüz Modu" : "🌙 Gece Modu";
+    });
+
+    // Yukarı Çık
+    const backToTopBtn = document.getElementById("backToTop");
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop > 50) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    backToTopBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Arama
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const keyword = this.value.toLowerCase();
+      document.querySelectorAll(".tarif").forEach(function (tarif) {
+        const text = tarif.innerText.toLowerCase();
+        tarif.style.display = text.includes(keyword) ? "block" : "none";
+      });
+    });
+  </script>
+  <section id="kullaniciTarifleri">
+  <div class="container">
+    <h3>Kullanıcı Tarifleri</h3>
+    <div id="tarifListesi"></div> 
+  </div>
+  <form id="tarifForm">
+  <input type="text" name="isim" placeholder="Ad Soyad" required class="form-control" />
+  <input type="text" name="tel" placeholder="Telefon Numarası" required class="form-control" />
+  <input type="email" name="mail" placeholder="Email adresiniz" required class="form-control" />
+  <input type="text" name="yemekadi" placeholder="Yemek Adı" required class="form-control" />
+  <textarea name="mesaj" placeholder="Yemek Tarifi Giriniz" rows="5" required class="form-control"></textarea>
+  <input type="submit" value="Gönder" class="submit-btn" />
+</form>
+<script>
+  document.getElementById("tarifForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const tarif = {
+      isim: form.isim.value,
+      tel: form.tel.value,
+      mail: form.mail.value,
+      yemekadi: form.yemekadi.value,
+      mesaj: form.mesaj.value
+    };
+    let tarifler = JSON.parse(localStorage.getItem("kullaniciTarifleri")) || [];
+    tarifler.push(tarif);
+    localStorage.setItem("kullaniciTarifleri", JSON.stringify(tarifler));
+
+    form.reset();
+    alert("Tarifiniz başarıyla gönderildi!");
+    tarifleriGoster();
+  });
+
+  function tarifleriGoster() {
+    const liste = document.getElementById("tarifListesi");
+    liste.innerHTML = "";
+
+    const tarifler = JSON.parse(localStorage.getItem("kullaniciTarifleri")) || [];
+
+    tarifler.forEach((tarif, index) => {
+      const div = document.createElement("div");
+      div.classList.add("tarif");
+      div.setAttribute("data-id", index);
+      div.innerHTML = `
+        <img src="img/arkaplan2.jpg" alt="${tarif.yemekadi}" />
+        <div class="tarif-detay">
+          <h4>${tarif.yemekadi}</h4>
+          <p><strong>Tarif:</strong> ${tarif.mesaj}</p>
+          <p><strong>Gönderen:</strong> ${tarif.isim} - ${tarif.mail}</p>
+          <button class="sil-btn">Sil</button>
+        </div>
+      `;
+      liste.appendChild(div);
+    });
+
+    // Sil butonlarını bağla
+    document.querySelectorAll(".sil-btn").forEach(button => {
+      button.addEventListener("click", function () {
+        const index = parseInt(this.closest(".tarif").dataset.id);
+        let tarifler = JSON.parse(localStorage.getItem("kullaniciTarifleri")) || [];
+        tarifler.splice(index, 1);
+        localStorage.setItem("kullaniciTarifleri", JSON.stringify(tarifler));
+        tarifleriGoster(); // Listeyi güncelle
+      });
+    });
+  }
+
+  // Sayfa yüklendiğinde tarifleri göster
+  document.addEventListener("DOMContentLoaded", tarifleriGoster);
+
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    checkLogin();
+    tarifleriGoster();
+    favorileriGosterPanelde();
+
+    // Kalp ikonlarını kontrol et
+    const favoriler = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    document.querySelectorAll(".favorite-icon").forEach(icon => {
+      const yemekId = icon.dataset.id;
+
+      // Sayfa ilk yüklenirken favori mi kontrol et
+      if (favoriler.includes(yemekId)) {
+        icon.classList.add("favori-aktif");
+      }
+
+      icon.addEventListener("click", function () {
+        if (!localStorage.getItem("username")) {
+          alert("Favorilere eklemek için giriş yapmalısınız.");
+          return;
+        }
+
+        let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+        if (favs.includes(yemekId)) {
+          favs = favs.filter(f => f !== yemekId);
+          icon.classList.remove("favori-aktif");
+        } else {
+          favs.push(yemekId);
+          icon.classList.add("favori-aktif");
+        }
+
+        localStorage.setItem("favorites", JSON.stringify(favs));
+        favorileriGosterPanelde();
+      });
+    });
+  });
+
+  function favorileriGosterPanelde() {
+    const panel = document.getElementById("favoriListe");
+    panel.innerHTML = "";
+
+    const favoriler = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    favoriler.forEach(id => {
+      const tarif = document.querySelector(`.tarif[data-id="${id}"]`);
+      const baslik = tarif?.querySelector("h4")?.textContent || "Tarif";
+
+      const li = document.createElement("li");
+      li.textContent = baslik;
+
+      const silBtn = document.createElement("button");
+      silBtn.textContent = "×";
+      silBtn.classList.add("favori-sil-btn");
+      silBtn.addEventListener("click", () => {
+        let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+        favs = favs.filter(f => f !== id);
+        localStorage.setItem("favorites", JSON.stringify(favs));
+
+        document.querySelector(`.favorite-icon[data-id="${id}"]`)?.classList.remove("favori-aktif");
+
+        favorileriGosterPanelde();
+      });
+
+      li.appendChild(silBtn);
+      panel.appendChild(li);
+    });
+  }
+</script>
+<script>
+  icon.addEventListener("click", function () {
+  const yemekId = icon.dataset.id;
+  const baslik = icon.closest(".tarif")?.querySelector("h4")?.textContent || "Tarif";
+
+  let favoriler = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+  const alreadyFav = favoriler.find(f => f.id === yemekId);
+
+  if (alreadyFav) {
+    // Sil
+    favoriler = favoriler.filter(f => f.id !== yemekId);
+    icon.classList.remove("favori-aktif");
+  } else {
+    // Ekle
+    favoriler.push({ id: yemekId, baslik: baslik });
+    icon.classList.add("favori-aktif");
+  }
+
+  localStorage.setItem("favorites", JSON.stringify(favoriler));
+  favorileriGosterPanelde();
+});
+function favorileriGosterPanelde() {
+  const panel = document.getElementById("favoriListe");
+  panel.innerHTML = "";
+
+  const favoriler = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+  favoriler.forEach(fav => {
+    const li = document.createElement("li");
+    li.textContent = fav.baslik;
+
+    const silBtn = document.createElement("button");
+    silBtn.textContent = "×";
+    silBtn.addEventListener("click", () => {
+      let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+      favs = favs.filter(f => f.id !== fav.id);
+      localStorage.setItem("favorites", JSON.stringify(favs));
+
+      document.querySelector(`.favorite-icon[data-id="${fav.id}"]`)?.classList.remove("favori-aktif");
+
+      favorileriGosterPanelde();
+    });
+
+    li.appendChild(silBtn);
+    panel.appendChild(li);
+  });
+}
+
+</script>
+<script>
+  function favorileriGosterPanelde() {
+    const panel = document.getElementById("favoriListe");
+    panel.innerHTML = "";
+
+    const favoriler = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    favoriler.forEach(fav => {
+      const li = document.createElement("li");
+      li.textContent = fav.baslik;
+
+      const silBtn = document.createElement("button");
+      silBtn.textContent = "×";
+      silBtn.classList.add("favori-sil-btn");
+      silBtn.addEventListener("click", () => {
+        let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+        favs = favs.filter(f => f.id !== fav.id);
+        localStorage.setItem("favorites", JSON.stringify(favs));
+
+        document.querySelector(`.favorite-icon[data-id="${fav.id}"]`)?.classList.remove("favori-aktif");
+        favorileriGosterPanelde();
+      });
+
+      li.appendChild(silBtn);
+      panel.appendChild(li);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    favorileriGosterPanelde();
+
+    document.querySelectorAll(".favorite-icon").forEach(icon => {
+      const yemekId = icon.dataset.id;
+      const baslik = icon.closest(".tarif")?.querySelector("h4")?.textContent || "Tarif";
+
+      const favoriler = JSON.parse(localStorage.getItem("favorites") || "[]");
+      if (favoriler.find(f => f.id === yemekId)) {
+        icon.classList.add("favori-aktif");
+      }
+
+      icon.addEventListener("click", function () {
+        if (!localStorage.getItem("username")) {
+          alert("Favorilere eklemek için giriş yapın.");
+          return;
+        }
+
+        let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+        const existing = favs.find(f => f.id === yemekId);
+
+        if (existing) {
+          favs = favs.filter(f => f.id !== yemekId);
+          icon.classList.remove("favori-aktif");
+        } else {
+          favs.push({ id: yemekId, baslik: baslik });
+          icon.classList.add("favori-aktif");
+        }
+
+        localStorage.setItem("favorites", JSON.stringify(favs));
+        favorileriGosterPanelde();
+      });
+    });
+  });
+</script>
+
+</body>
+
+</html>
