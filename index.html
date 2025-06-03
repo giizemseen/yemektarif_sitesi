@@ -154,13 +154,13 @@
       }
     }
 
-    loginBtn.addEventListener("click", () => {
-      const username = prompt("Adınızı girin:");
-      if (username) {
-        localStorage.setItem("username", username);
-        checkLogin();
-      }
-    });
+  logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("username");
+  localStorage.removeItem("favorites"); // Favorileri de sil
+  checkLogin();
+  favorileriGosterPanelde(); // Favori panelini temizle
+});
+
 
     logoutBtn.addEventListener("click", () => {
       localStorage.removeItem("username");
