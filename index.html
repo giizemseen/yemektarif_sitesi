@@ -26,6 +26,28 @@
       <a href="#kahvaltiliklar">Kahvaltılıklar</a>
     </nav>
   </section>
+  <!-- Arka plan karartması -->
+<div id="popupArkaPlan" style="display: none;"></div>
+
+<!-- Giriş Formu -->
+<div id="girisFormu" class="auth-popup" style="display: none;">
+  <h3>Giriş Yap</h3>
+  <input type="text" id="girisKullanici" placeholder="Kullanıcı Adı" required>
+  <input type="password" id="girisSifre" placeholder="Şifre" required>
+  <button onclick="girisYap()">Giriş Yap</button>
+  <p>Hesabınız yok mu? <a href="#" onclick="formlariGoster('kayit')">Kayıt Ol</a></p>
+</div>
+
+<!-- Kayıt Formu -->
+<div id="kayitFormu" class="auth-popup" style="display: none;">
+  <h3>Kayıt Ol</h3>
+  <input type="text" id="kayitKullanici" placeholder="Kullanıcı Adı" required>
+  <input type="password" id="kayitSifre" placeholder="Şifre" required>
+  <input type="email" id="kayitEmail" placeholder="Gmail adresiniz" required>
+  <button onclick="kayitOl()">Kayıt Ol</button>
+  <p>Zaten hesabınız var mı? <a href="#" onclick="formlariGoster('giris')">Giriş Yap</a></p>
+</div>
+
 
   <input type="text" id="searchInput" placeholder="Tarif ara..." />
 
@@ -34,7 +56,7 @@
       <h2>Anasayfa</h2>
       <p>
         Lezzetin dünyasına hoş geldiniz! En pratik ve nefis yemek tarifleriyle mutfağınızda harikalar yaratın.
-        <br />Bu site, Web tabanlı uygulama programlama dersi için final projesidir.
+        <br />Bu site, Site Web tabanlı uygulama programlama dersi için final projesidir.
       </p>
     </div>
   </section>
@@ -154,18 +176,16 @@
       }
     }
 
-  logoutBtn.addEventListener("click", () => {
+   loginBtn.addEventListener("click", () => {
+  formlariGoster("giris"); // Giriş formunu aç
+});
+
+logoutBtn.addEventListener("click", () => {
   localStorage.removeItem("username");
   localStorage.removeItem("favorites"); // Favorileri de sil
   checkLogin();
   favorileriGosterPanelde(); // Favori panelini temizle
 });
-
-
-    logoutBtn.addEventListener("click", () => {
-      localStorage.removeItem("username");
-      checkLogin();
-    });
 
     checkLogin();
 
@@ -340,13 +360,63 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("DOMContentLoaded", tarifleriGoster);
 
 </script>
+<script> 
+function formlariGoster(tip) {
+  document.getElementById("girisFormu").style.display = tip === "giris" ? "block" : "none";
+  document.getElementById("kayitFormu").style.display = tip === "kayit" ? "block" : "none";
+}
+function kayitOl() {
+  const kullanici = document.getElementById("kayitKullanici").value.trim();
+  const sifre = document.getElementById("kayitSifre").value;
+  const email = document.getElementById("kayitEmail").value.trim();
+
+  if (!kullanici || !sifre || !email) {
+    alert("Tüm alanları doldurun!");
+    return;
+  }
+
+  if (!email.endsWith("@gmail.com")) {
+    alert("Sadece @gmail.com uzantılı adresler kabul edilir.");
+    return;
+  }
+
+  const kullanicilar = JSON.parse(localStorage.getItem("kullanicilar") || "{}");
+
+  if (kullanicilar[kullanici]) {
+    alert("Bu kullanıcı adı zaten kayıtlı.");
+    return;
+  }
+
+  kullanicilar[kullanici] = {
+    sifre: sifre,
+    email: email
+  };
+  localStorage.setItem("kullanicilar", JSON.stringify(kullanicilar));
+  alert("Kayıt başarılı! Şimdi giriş yapabilirsiniz.");
+  formlariGoster("giris");
+}
+
+function girisYap() {
+  const kullanici = document.getElementById("girisKullanici").value;
+  const sifre = document.getElementById("girisSifre").value;
+
+  const kullanicilar = JSON.parse(localStorage.getItem("kullanicilar") || "{}");
+
+  if (kullanicilar[kullanici] && kullanicilar[kullanici].sifre === sifre)
+ {
+    localStorage.setItem("username", kullanici);
+    alert("Giriş başarılı!");
+    location.reload(); // sayfayı yenile
+  } else {
+    alert("Kullanıcı adı veya şifre hatalı!");
+  }}
+</script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     checkLogin();
     tarifleriGoster();
     favorileriGosterPanelde();
-
-    // Kalp ikonlarını kontrol et
+// Kalp ikonlarını kontrol et
     const favoriler = JSON.parse(localStorage.getItem("favorites") || "[]");
 
     document.querySelectorAll(".favorite-icon").forEach(icon => {
@@ -522,6 +592,29 @@ function favorileriGosterPanelde() {
       });
     });
   });
+</script>
+<script> document.addEventListener("DOMContentLoaded", function () {
+  loginBtn.addEventListener("click", () => {
+    formlariGoster("giris");
+  });
+});
+</script>
+<script>
+  function formlariGoster(tip) {
+  document.getElementById("popupArkaPlan").style.display = "block";
+  document.getElementById("girisFormu").style.display = tip === "giris" ? "block" : "none";
+  document.getElementById("kayitFormu").style.display = tip === "kayit" ? "block" : "none";
+}
+
+// Arka plana tıklanınca formu kapat
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("popupArkaPlan").addEventListener("click", function () {
+    document.getElementById("girisFormu").style.display = "none";
+    document.getElementById("kayitFormu").style.display = "none";
+    this.style.display = "none";
+  });
+});
+
 </script>
 
 </body>
