@@ -1,519 +1,156 @@
-/* Genel ayarlar */
+/* --- 1. GENEL AYARLAR VE SIFIRLAMA --- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fffdf7;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-/* Menü */
+/* --- 2. NAVİGASYON MENÜSÜ --- */
 #menu {
-  background-color: #e67e22;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-}
-
-#menu-left {
-  display: flex;
-  align-items: center;
+    background-color: #e67e22;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 #logo {
-  font-size: 28px;
-  font-weight: bold;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
-  transition: 0.3s;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
+nav a:hover { color: #f39c12; }
 
-/* Bölümler */
+/* --- 3. ANA SAYFA DÜZENİ --- */
 section {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: auto;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Başlıklar */
 h2 {
-  font-size: 32px;
-  color: #e67e22;
-  margin-bottom: 10px;
+    font-size: 36px;
+    color: #e67e22;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-h3 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #e74c3c;
-  border-bottom: 2px solid #e74c3c;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-body{
-  margin:0;
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
-  background-color: #fffdf7;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Tarif kutusu */
+/* Ana Sayfadaki Küçük Tarif Kartları */
 .tarif {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  margin-bottom: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform 0.2s ease;
-  position: relative;
-}
-.tarifler-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.tarif-container {
-  max-width: 800px;
-  margin: auto;
-  background-color: #fff;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
-}
-
-.tarif:hover {
-  transform: scale(1.02);
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 600px; /* Kartların devleşmesini engeller */
+    position: relative;
 }
 
 .tarif img {
-  width: 100%;
-  border-radius: 8px aut;
-  margin-bottom: 20px;
-}
-
-.tarif-detay {
-  padding: 20px;
-}
-.tarif-detaylar h2 {
-  color: #d35400;
-  margin-top: 20px;
-}
-li {
-  margin-bottom: 5px;
-}
-.tarif-detay h4 {
-  margin-bottom: 10px;
-  font-size: 22px;
-  color: #9b1e1e;
-}
-
-.tarif-detay p {
-  font-size: 16px;
-  color: #110505;
-}
-
-/* Favori kalp ikonu */
-.favorite-icon {
-  cursor: pointer;
-  color: gray;
-  transition: color 0.3s ease;
-}
-
-.favorite-icon.favori-aktif {
-  color: red;
-}
-
-/* İletişim formu */
-#iletisim {
-  padding: 40px 0;
-  background-color: #f8f8f8;
-}
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.form-wrapper {
-  position: relative;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-}
-
-.background-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.form-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-  border-radius: 10px;
-}
-
-.form-control {
-  margin: 8px 0;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-  font-size: 16px;
-}
-
-.submit-btn {
-  padding: 10px;
-  background-color: #ff5722;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-.submit-btn:hover {
-  background-color: #e64a19;
-}
-
-
-/* Yukarı çık butonu */
-#backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
-  padding: 12px;
-  cursor: pointer;
-  display: none;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-#backToTop:hover {
-  background-color: #d32f2f;
-}
-
-/* Duyarlı tasarım */
-@media (max-width: 768px) {
-  #menu {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav a {
-    margin: 10px 0;
-  }
-
-  .tarif {
     width: 100%;
-  }
-}
-/* Gece Modu Stili */
-body.dark-mode {
-  background-color: #121212;
-  color: #f1f1f1;
+    height: 280px;
+    object-fit: cover;
 }
 
-/* Linkler */
-body.dark-mode a,
-body.dark-mode nav a {
-  color: #a7d3f2;
+/* --- 4. TARİF DETAY SAYFALARI (NİZAMİ ORTA DÜZEN) --- */
+/* Yemeklerin içine girince bu kısım çalışır */
+.tarif-container {
+    max-width: 800px; 
+    margin: 40px auto; 
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Her şeyi dikeyde ortalar */
+    text-align: center;
 }
 
-/* Tarif kartları */
-body.dark-mode .tarif {
-  background-color: #1e1e1e;
-  border-color: #333;
-  color: #f1f1f1; /* Tarif içindeki tüm metinler beyaz */
+.tarif-detaylar {
+    width: 100%;
+    text-align: left; /* Malzemeler sola yaslı, okunaklı */
+    margin-top: 20px;
 }
 
-/* Tarif içindeki açıklama yazılarını da beyaz yap */
-body.dark-mode .tarif p,
-body.dark-mode .tarif span,
-body.dark-mode .tarif .aciklama {
-  color: #f1f1f1;
+.tarif-container img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-/* Logo, kullanıcı adı, butonlar */
-body.dark-mode #logo,
-body.dark-mode #usernameDisplay,
-body.dark-mode nav a,
-body.dark-mode button {
-  color: #f1f1f1;
+/* --- 5. FAVORİLER VE DİĞER ARAÇLAR --- */
+.favorite-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
 }
 
-/* Buton arka planı */
-body.dark-mode button {
-  background-color: #444;
-}
+.favori-aktif { color: #e74c3c !important; }
 
-/* Dark Mode Butonu Stil */
-#darkModeBtn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-/* Hover efekti */
-body.dark-mode nav a:hover {
-  color: #ffffff;
-}
-
-#searchInput {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-}
-#kullaniciTarifleri {
-  background-image: url("img/arkaplan2.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 50px 20px;
-  color: white;
-  position: relative;
-}
-
-#kullaniciTarifleri::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* arka planı karart */
-  z-index: 0;
-}
-
-#kullaniciTarifleri .container {
-  position: relative;
-  z-index: 1;
-}
-/* Kullanıcı Tarifleri Arka Plan */
-#kullaniciTarifleri {
-  position: relative;
-  padding: 40px 20px;
-  z-index: 1;
-}
-
-/* Arka plan resmi */
-.background-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Arka plana atar */
-  opacity: 0.2; /* Hafif saydamlık */
-}
-
-/* Form kutusu */
-#tarifForm {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  color: black;
-  z-index: 2;
-}
-
-/* Form alanları */
-#tarifForm input,
-#tarifForm textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  color: black;
-  background-color: white;
-}
-
-/* Placeholder rengi */
-#tarifForm input::placeholder,
-#tarifForm textarea::placeholder {
-  color: #777;
-}
-
-/* Gönder butonu */
-.submit-btn {
-  background-color: #d35400;
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background-color: #e67e22;
-}
 #favorilerPaneli {
-  position: fixed;
-  top: 100px;
-  right: 10px;
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  max-width: 200px;
-  max-height: 300px;
-  overflow-y: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+    border-radius: 10px;
 }
 
-#favorilerPaneli h3 {
-  margin-top: 0;
- 
+/* --- 6. DARK MODE --- */
+body.dark-mode { background-color: #121212; color: #f1f1f1; }
+body.dark-mode .tarif, 
+body.dark-mode .tarif-container,
+body.dark-mode #favorilerPaneli {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #333;
 }
 
-#favoriListe {
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-}
-
-#favoriListe li {
-  margin-bottom: 10px;
-  font-size: 14px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
-}
-.favori-sil-btn {
-  background: none;
-  border: none;
-  color: red;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 18px;
-}
-/* Arka plan karartması */
-#popupArkaPlan {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
-}
-
-/* Giriş ve Kayıt Kutusu */
-.auth-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-  z-index: 1001;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.auth-popup h3 {
-  text-align: center;
-  color: #e67e22;
-  margin-bottom: 20px;
-}
-
-.auth-popup input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-}
-
-.auth-popup button {
-  width: 100%;
-  background: #e67e22;
-  color: white;
-  border: none;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.auth-popup button:hover {
-  background: #cf5c00;
-}
-
-.auth-popup p {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.auth-popup a {
-  color: #3498db;
-  text-decoration: none;
-}
-
-.auth-popup a:hover {
-  text-decoration: underline;
+/* --- 7. YUKARI ÇIK BUTONU --- */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
 }
